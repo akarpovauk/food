@@ -24,5 +24,6 @@ yarn-error.log*
 
 src/mailer/smart.php
 dist/mailer/smart.php
+smart.php
 
 package-lock.json
