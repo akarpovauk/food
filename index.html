@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food</title>
+	<link rel="stylesheet" href="css/cookieConsent.css">
+	<!-- <link rel="stylesheet" type ="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"> -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -217,7 +219,7 @@
                     Мы ценим каждого клиента и предлагаем вам стать одним из них на очень выгодных условиях. 
                     Каждому, кто закажет доставку питание на неделю, будет предоставлена скидка в размере <span>20%!</span>
                     <br><br>
-                    Акция закончится 15 октября в 00:00
+                    Акция закончится 31 декабря в 00:00
                 </div>
             </div>
             <div class="promotion__timer">
@@ -276,7 +278,151 @@
         </div>
     </div>
 
+	<div class="popup">
+		<div class="container">
+			<div>
+				<hp>This website uses cookies to ensure you get the best experience on our website.
+					<a href="#" class="link">Learn more</a>
+				</hp>	
+			</div>
+			<div>
+					<button data-decline class="btn-cookie btn-cookie_decline">Decline</button>
+					<button data-allow class="btn-cookie">Allow cookies</button>
+			</div>
+		</div>
+	</div>
+
 	<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 	<script src = 'js/script.js'></script>
+	<script src='js/cookieConsent.js'></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+	<script>
+		window.cookieconsent.initialise({
+		 	container: document.getElementById("content"),
+			palette:{
+				popup: {background: "#fff"},
+				button: {background: "#aa0000"},
+			},
+		 	revokable:true,
+		 	onStatusChange: function(status) {
+		  		console.log(this.hasConsented() ?'enable cookies' : 'disable cookies');
+		 	},
+		 	law: {
+		 	 	regionalLaw: false,
+		 	},
+		 	location: true,
+		 	theme: 'classic',
+		 	position: 'bottom',
+		 	type: 'opt-in',
+			content: {
+				// header: 'Cookies used on the website!',
+				// message: 'This website uses cookies to improve your experience.',
+				// dismiss: 'Got it!',
+				allow: 'Allow cookies',
+				deny: 'Decline',
+				link: 'Learn more',
+				href: 'https://www.cookiesandyou.com',
+				// close: '&#x274c;',
+				policy: 'Cookie Policy',
+				// target: '_blank',
+			},
+			onInitialise: function (status) {
+				var type = this.options.type;
+				var didConsent = this.hasConsented();
+				if (type == 'opt-in' && didConsent) {
+				// enable cookies
+				console.log('enable cookies');
+				}
+    			if (type == 'opt-out' && !didConsent) {
+    			// disable cookies
+				console.log('disable cookies');
+    			}
+    		},
+   			onStatusChange: function(status, chosenBefore) {
+				var type = this.options.type;
+				var didConsent = this.hasConsented();
+				if (type == 'opt-in' && didConsent) {
+				// enable cookies
+				console.log('enable cookies');
+				}
+				if (type == 'opt-out' && !didConsent) {
+				// disable cookies
+				console.log('disable cookies');
+				}
+    		},
+    		onRevokeChoice: function() {
+				var type = this.options.type;
+				if (type == 'opt-in') {
+				// disable cookies
+				console.log('disable cookies');
+				}
+				if (type == 'opt-out') {
+				// enable cookies
+				console.log('enable cookies');
+				}
+    		}
+		});
+	</script> -->
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" /> -->
+
+	<!-- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false">
+		
+	</script> -->
+
+	<!-- <script>
+		window.addEventListener('load', function(){
+			window.cookieconsent.initialise({
+				revokeBtn: "<div class='cc-revoke'></div>",
+				type: "opt-in",
+				theme: "classic",
+				palette: {
+					popup: {
+						background: "#eee",
+						text: "#303030"
+					},
+					button: {
+						background: "#d43d3d",
+						text: "#fff"
+					}
+				},
+				content: {
+					link: "Learn more",
+					href: "https://2gdpr.com/cookies"
+				},
+				onInitialise: function(status) {
+					if(status == cookieconsent.status.allow) myScripts();
+				},
+				onStatusChange: function(status) {
+					if (this.hasConsented()) myScripts();
+				}
+			})
+		});
+
+	function myScripts() {
+	// Paste here your scripts that use cookies requiring consent. See examples below
+	// Google Analytics, you need to change 'UA-00000000-1' to your ID
+		(function(i,s,o,g,r,a,m) {
+			i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+				(i[r].q=i[r].q||[]).push(arguments)},
+				i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];
+				a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-00000000-1', 'auto');
+		ga('send', 'pageview');
+
+	// Facebook Pixel Code, you need to change '000000000000000' to your PixelID
+		!function(f,b,e,v,n,t,s)
+		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t,s)}(window, document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '000000000000000');
+		fbq('track', 'PageView');
+	}
+</script> -->
 </body>
 </html>

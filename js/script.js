@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 
 	//Timer
-	const deadline = '2023-10-15';
+	const deadline = '2023-12-31';
 
 	function getTimeRemaining(endtime) {
 		const t = Date.parse(endtime) - Date.parse(new Date());
@@ -582,3 +582,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 
 });
+
+
+
+
+
